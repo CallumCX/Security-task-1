@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 <form method="POST" novalidate>
-    <input name="name" placeholder="Enter your name">
-    <input type="submit" value="Register">
+    {{form.hidden_tag()}}
+    <p>
+        {{form.username.label}}
+        {{form.username(placeholder="Username
+    </p>
+    <p>
+        {{form.email.label}}
+        {{form.email(placeholder="Email")}}
+    </p>
+    <p>
+        {{form.password.label}}
+        {{form.password(placeholder="password")}}
+    </p>
+    <p>
+        {{form.confirm_password.label}}
+        {{form.confirm_password(placeholder="confirm password")}}
+    </p>
+    <p>
+        {{form.submit}}
+    </p>
 </form>
-<p>Hello {{ name | safe }}</p>
 {% endblock %}
